@@ -1,4 +1,4 @@
-# tones
+# Tones
 
 Tone generation commands in sox and more
 
