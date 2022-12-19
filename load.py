@@ -2,9 +2,10 @@ import time
 import pygame
 import os
 
-print(pygame.init())
+pygame.init()
 pygame.mixer.pre_init(frequency=11025, size=-8, channels=1)
-print(pygame.mixer.init())
+pygame.mixer.init()
+pygame.mixer.set_num_channels(100)
 
 wavs = [w for w in os.listdir(".") if w.endswith("wav")]
 

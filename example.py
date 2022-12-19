@@ -1,6 +1,4 @@
 import pygame
-pygame.mixer.set_num_channels(100)
-
 import threading
 import play
 
