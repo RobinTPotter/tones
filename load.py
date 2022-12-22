@@ -1,6 +1,8 @@
 import time
 import os
-from imp_pygame import sound
+
+#from imp_pygame import sound
+from imp_sound import sound
 
 wavs = [w for w in os.listdir(".") if w.endswith("wav")]
 
@@ -25,7 +27,7 @@ print(f"loading {len(wavs)} sounds to dict wav")
 wav = {}
 for w in wavs:
     t = sound(w) 
-    print(f"loaded {w}")
+    #print(f"loaded {w}")
     t.play()
     #time.sleep(2)
     wav[w[:-4]] = t
