@@ -36,11 +36,11 @@ def play(song="4O6GEG.Fs.Ds.E.DDD.CsCsCs.CCC.O5BeceB", beat=1, length=4, vol = 5
             ding = f"{note}{octave + (1 if small else 0)}"
             print(f"ding {ding}")
             pwm.freq(notes[ding])
-			      pwm.duty_u16(int(32000.0 * vol / 100))
+            pwm.duty_u16(int(32000.0 * vol / 100))
         
         time.sleep(beat/length)
         
         if note!=".":
-			      pwm.duty_u16(0)
+            pwm.duty_u16(0)
 
 
