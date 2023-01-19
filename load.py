@@ -1,13 +1,11 @@
 import time
-import pygame
 import os
+
 
 DIR = "wavs"
 
-pygame.init()
-pygame.mixer.pre_init(frequency=11025, size=-8, channels=1)
-pygame.mixer.init()
-pygame.mixer.set_num_channels(100)
+from imp_pygame import sound
+#from imp_sound import sound
 
 wavs = [w for w in os.listdir(DIR) if w.endswith("wav")]
 
@@ -31,8 +29,9 @@ print(f"loading {len(wavs)} sounds to dict wav")
 
 wav = {}
 for w in wavs:
-    t = pygame.mixer.Sound(DIR+"/"+w) 
-    print(f"loaded {w}")
+
+    t = sound(f"{DIR}/{w}") 
+    #print(f"loaded {w}")
     t.play()
     #time.sleep(2)
     wav[w[:-4]] = t
