@@ -22,6 +22,16 @@ notes = {f[0]:f[1] for f in freqs}
 pwm = PWM(Pin(0, Pin.OUT))
 
 def play(song="V994O6GEG.Fs.V30Ds.E.V99DDD.V22CsCsCs.CCC.V99O5BeceB", beat=1, length=4, vol = 99):
+    # case sensistive song string
+    # V0-99 volume
+    # O1-N octave
+    # . rest
+    # s - sharp
+    # n / N note and note + octave
+    # 1-TT time divisor
+    # beat = length in seconds of beat (default 1 second)
+    # length = current time divisor (default 4)
+    # vol = volume (related to duty cycle) (default 99)
     octave = 3
     while len(song)>0:
         match = pattern.search(song) # no re.split in micropython
